@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int base_yr=1900,yr,leap,yr_diff,total_days=0,day=0;
+    int base_yr=1900,yr,leap=0,yr_diff,total_days=0,day=0;
     printf("Enter year: ");
     scanf("%d",&yr);
     yr_diff=yr-base_yr;
@@ -21,7 +21,7 @@ int main()
         base_yr++;
     }
     total_days=(yr_diff-leap)*365+leap*366;
-    day=(total_days%7)-1;
+    day=(total_days%7);
     switch (day)
     {
     case 0:
@@ -45,6 +45,8 @@ int main()
     case 6:
         printf("Sunday");
         break;
+    default:
+        printf("Somwthing Went Wrong!");
+        break;
     }
-
 }
