@@ -1,3 +1,7 @@
+// According to the Gregorian calendar, it was Monday on the date 01/01/2001.
+// If any year is input through the keyboard.
+// Write a C program to find out what is the day on the first January of this year.
+
 #include <stdio.h>
 int main()
 {

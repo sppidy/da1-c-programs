@@ -1,3 +1,19 @@
+
+// An online retailer sells five different products, whose retail prices are shown in the following table:
+// |________________________________|
+// |Product number |	Retail price|
+// |--------------------------------|
+// |             1 |	$2.98       |
+// |             2 |	$4.50       |
+// |             3 |	$9.98       |
+// |             4 |    $4.49       |
+// |             5 |	$6.87       |
+// |________________________________|
+// Write a C program that reads a series of pairs of input as follows:
+// a.	Product number
+// b.	Quantity sold for one day
+// Write a program to help and determine the retail price for each product. Calculate and display the total retail value of all products sold last week.
+
 #include<stdio.h>
 int main()
 {
