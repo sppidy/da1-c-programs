@@ -46,7 +46,7 @@ int main()
         printf("Sunday");
         break;
     default:
-        printf("Somwthing Went Wrong!");
+        printf("Something Went Wrong!");
         break;
     }
 }
