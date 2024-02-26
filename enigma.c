@@ -26,8 +26,8 @@ double calculate_discriminant(double a, double b, double c) {
 }
 
 void calculate_roots(double a, double b, double discriminant, double* x1, double* x2) {
-    *x1 = divide(subtract(-b, square_root(discriminant)), multiply(2, a));
-    *x2 = divide(add(-b, square_root(discriminant)), multiply(2, a));
+    *x1 = divide(add(-b, square_root(discriminant)), multiply(2, a));
+    *x2 = divide(subtract(-b, square_root(discriminant)), multiply(2, a));
 }
 
 int main() {
