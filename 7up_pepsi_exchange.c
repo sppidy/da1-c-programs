@@ -3,9 +3,9 @@
 #include <string.h>
 
 int main() {
-    char GlassA[6] = "Pepsi";
-    char GlassB[5] = "7Up";
-    char temp[6];
+    char GlassA[10] = "Pepsi";
+    char GlassB[10] = "7Up";
+    char temp[10];
     printf("Initially, Glass A contains: %s and Glass B contains: %s\n", GlassA, GlassB);
     strcpy(temp,GlassA);
     strcpy(GlassA,GlassB);
