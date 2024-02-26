@@ -36,16 +36,21 @@ int main() {
     printf("Enter a, b, and c: ");
     scanf("%lf %lf %lf", &a, &b, &c);
 
+    if (a == 0) {
+        printf("The coefficient 'a' must be non-zero for a quadratic equation.\n");
+        return 1;
+    }
+
     discriminant = calculate_discriminant(a, b, c);
 
     if (discriminant < 0) {
-        printf("The equation has no real roots\n");
+        printf("The roots are imaginary.\n");
         return 0;
     }
 
     calculate_roots(a, b, discriminant, &x1, &x2);
 
-    printf("The roots are: %.2lf and %.2lf\n", x1, x2);
+    printf("The roots are: %.6lf and %.6lf\n", x1, x2);
 
     return 0;
 }
