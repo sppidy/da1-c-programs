@@ -4,55 +4,64 @@
 // ‘*’ Operator: Accepts 2 integers as input and multiply the individual digits of given two numbers and return the product as answer.
 // ‘$’ Operator: Accept an integer as input and return the reverse of the given number
 #include <stdio.h>
-int sum_of_digits(int a, int b)
+int adder(int num)
 {
     int sum = 0;
-    sum = a + b;
+    while (num > 0)
+    {
+        sum += num % 10;
+        num /= 10;
+    }
     return sum;
 }
-int product_of_digits(int a, int b)
+int multiplier(int num)
 {
-    int product = 0;
-    product = a * b;
+    int product = 1;
+    while (num > 0)
+    {
+        product *= num % 10;
+        num /= 10;
+    }
     return product;
 }
-int reverse_of_number(int a){ 
-    int reverse = 0;
-    while(a != 0)
-    {
-        reverse = reverse * 10;
-        reverse = reverse + a%10;
-        a = a/10;
-    }
-    return reverse;   
-}
-int main ()
+int reverser(int num)
 {
-    char operator;
-    int a, b;
-    printf("Enter operator: ");
-    scanf("%c", &operator);
-    if (operator == '+')
+    int reversed = 0;
+    while (num > 0)
     {
-        printf("Enter two numbers: ");
-        scanf("%d %d", &a, &b);
-        printf("Sum of digits: %d\n", sum_of_digits(a, b));
+        reversed = reversed * 10 + num % 10;
+        num /= 10;
     }
-    else if (operator == '*')
+    return reversed;
+}
+int main()
+{
+    char command;
+    int n1, n2, result;
+    printf("Enter command (+, *, $): ");
+    scanf(" %c", &command);
+    switch(command)
     {
-        printf("Enter two numbers: ");
-        scanf("%d %d", &a, &b);
-        printf("Product of digits: %d\n", product_of_digits(a, b));
-    }
-    else if (operator == '$')
-    {
-        printf("Enter a number: ");
-        scanf("%d", &a);
-        printf("Reverse of number: %d\n", reverse_of_number(a));
-    }
-    else
-    {
-        printf("Invalid operator!\n");
+        case '+':
+            printf("Enter two integers: ");
+            scanf("%d %d", &n1, &n2);
+            result = adder(n1) + adder(n2);
+            printf("Result: %d\n", result);
+            break;
+        case '*':
+            printf("Enter two integers: ");
+            scanf("%d %d", &n1, &n2);
+            result = multiplier(n1) * multiplier(n2);
+            printf("Result: %d\n", result);
+            break;
+        case '$':
+            printf("Enter an integer: ");
+            scanf("%d", &n1);
+            result = reverser(n1);
+            printf("Result: %d\n", result);
+            break;
+        default:
+            printf("Invalid command\n");
     }
     return 0;
 }

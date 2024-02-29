@@ -4,28 +4,26 @@
 // Write a c program using functions to find his total pay for 30 days.
 
 #include <stdio.h>
-
-int total_pay(int joining_date) {
-    int pay = joining_date * joining_date;
-    int total = pay;
-
-    for (int i = 1; i < 30; i++) {
-        pay *= 2;
-        total += pay;
-    }
-
-    return total;
+#include <math.h>
+double calculatePay(int day, int startingDay)
+{
+    if (day == 1)
+        return pow(startingDay, 2);
+    else
+        return 2 * calculatePay(day - 1, startingDay);
 }
-
-int main() {
-    int joining_date, total;
-
-    printf("Enter the joining date: ");
-    scanf("%d", &joining_date);
-
-    total = total_pay(joining_date);
-
-    printf("Total pay for 30 days: Rs. %d\n", total);
+int main()
+{
+    int days = 30;
+    int startingDay;
+    double totalPay = 0;
+    printf("Enter the joining date (day): ");
+    scanf("%d", &startingDay);
+    for (int i = 1; i <= days; i++)
+    {
+        totalPay += calculatePay(i, startingDay);
+    }
+    printf("Total pay for 30 days: Rs %.2lf\n", totalPay);
 
     return 0;
 }

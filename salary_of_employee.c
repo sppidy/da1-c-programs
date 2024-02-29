@@ -3,14 +3,14 @@
 #include <stdio.h>
 
 int main() {
-    float salary_15_days, monthly_salary;
-
+    float salary_15_days, monthly_salary, salary_per_day;
+    int days;
     printf("Enter the salary paid every 15 days: ");
     scanf("%f", &salary_15_days);
-
-    monthly_salary = salary_15_days * 2;
-
+    printf("Enter the number of days in a month: ");
+    scanf("%d", &days);
+    salary_per_day = salary_15_days/15;
+    monthly_salary = salary_per_day * days;
     printf("Monthly salary: %.2f\n", monthly_salary);
-
     return 0;
 }
